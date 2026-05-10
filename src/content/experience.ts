@@ -5,6 +5,8 @@ export type Experience = {
   domain?: string;
   role: string;
   period: string;
+  /** Compact label for timeline sidebar (e.g. "Mar '22 — Present") */
+  shortPeriod: string;
   startYear: number;
   endYear: number | "Present";
   location: string;
@@ -19,6 +21,7 @@ export const experiences: Experience[] = [
     domain: "tigeranalytics.com",
     role: "Data Engineer",
     period: "March 2022 – Present",
+    shortPeriod: "Mar '22 — Present",
     startYear: 2022,
     endYear: "Present",
     location: "Bengaluru, India",
@@ -38,6 +41,7 @@ export const experiences: Experience[] = [
     domain: "futurense.com",
     role: "Trainee Data Engineer",
     period: "November 2021 – February 2022",
+    shortPeriod: "Nov '21 — Feb '22",
     startYear: 2021,
     endYear: 2022,
     location: "Bengaluru, India",
@@ -52,6 +56,7 @@ export const experiences: Experience[] = [
     domain: "bosch.com",
     role: "Graduate Apprentice — Data Analytics",
     period: "September 2019 – December 2020",
+    shortPeriod: "Sep '19 — Dec '20",
     startYear: 2019,
     endYear: 2020,
     location: "Jaipur, India",

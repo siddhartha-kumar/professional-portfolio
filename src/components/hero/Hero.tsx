@@ -14,7 +14,7 @@ export function Hero() {
   return (
     <section
       id="hero"
-      className="relative min-h-screen flex flex-col justify-center overflow-hidden pt-24 pb-12"
+      className="relative min-h-screen flex flex-col justify-center overflow-hidden pt-24 pb-12 sm:pb-16"
     >
       {/* 3D rotating data globe — cinematic background */}
       <div className="absolute inset-0 -z-10">
@@ -168,19 +168,19 @@ export function Hero() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.6, delay: 2.0 }}
-        className="relative z-10 mt-12 lg:mt-16"
+        className="relative z-10 mt-10 lg:mt-14"
       >
         <LiveTicker items={profile.liveTickerItems} />
       </motion.div>
 
-      {/* Scroll cue */}
+      {/* Scroll cue — generous breathing room below the ticker */}
       <motion.a
         href="#about"
         aria-label="Scroll to about section"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.6, delay: 2.4 }}
-        className="absolute bottom-6 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-text-tertiary hover:text-brand-red transition-colors group z-10"
+        className="relative z-10 mt-14 sm:mt-16 mb-2 self-center inline-flex flex-col items-center gap-2 text-text-tertiary hover:text-brand-red transition-colors group"
       >
         <span className="font-mono text-[10px] tracking-[0.2em] uppercase">
           Scroll to dive in

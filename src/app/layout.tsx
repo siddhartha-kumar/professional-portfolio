@@ -1,7 +1,8 @@
 import type { Metadata, Viewport } from "next";
 import "./globals.css";
 
-const SITE_URL = "https://siddharthakumar.dev";
+const SITE_URL =
+  process.env.NEXT_PUBLIC_SITE_URL ?? "https://siddharthakumar.dev";
 const SITE_NAME = "Siddhartha Kumar — Data Infrastructure Architect";
 const SITE_DESCRIPTION =
   "Data Engineer with 5+ years architecting fault-tolerant, event-driven systems on AWS, Snowflake & Databricks. Currently at Tiger Analytics.";
