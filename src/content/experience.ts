@@ -5,8 +5,6 @@ export type Experience = {
   domain?: string;
   role: string;
   period: string;
-  /** Compact label for timeline sidebar (e.g. "Mar '22 — Present") */
-  shortPeriod: string;
   startYear: number;
   endYear: number | "Present";
   location: string;
@@ -21,16 +19,15 @@ export const experiences: Experience[] = [
     domain: "tigeranalytics.com",
     role: "Data Engineer",
     period: "March 2022 – Present",
-    shortPeriod: "Mar '22 — Present",
     startYear: 2022,
     endYear: "Present",
     location: "Bengaluru, India",
     current: true,
     highlights: [
-      "Architected POS pipeline at 8,000+ concurrent executions",
+      "Architected and built POS pipeline at 8,000+ concurrent executions",
       "Led PostgreSQL → DynamoDB migration (95% latency cut)",
       "Built ML Model Repository for pharma client (85% faster deployments)",
-      "Engineered multi-tenant portal for 50+ enterprise clients",
+      "Engineered multi-tenant portal for 10+ enterprise clients",
       "Designed fault-tolerant Lambda functions with 99.9% reliability",
       "Automated marketing-mix workflows (90% manual intervention reduced)",
     ],
@@ -41,7 +38,6 @@ export const experiences: Experience[] = [
     domain: "futurense.com",
     role: "Trainee Data Engineer",
     period: "November 2021 – February 2022",
-    shortPeriod: "Nov '21 — Feb '22",
     startYear: 2021,
     endYear: 2022,
     location: "Bengaluru, India",
@@ -56,7 +52,6 @@ export const experiences: Experience[] = [
     domain: "bosch.com",
     role: "Graduate Apprentice — Data Analytics",
     period: "September 2019 – December 2020",
-    shortPeriod: "Sep '19 — Dec '20",
     startYear: 2019,
     endYear: 2020,
     location: "Jaipur, India",

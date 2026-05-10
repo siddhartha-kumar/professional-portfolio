@@ -34,7 +34,7 @@ export const profile = {
     "15+ international markets",
     "$150K+ annual savings",
     "85% faster deployments",
-    "50+ enterprise clients served",
+    "10+ enterprise clients served",
   ],
   about: {
     title: "I build the systems that move data — reliably, at scale, under pressure.",
