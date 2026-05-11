@@ -14,12 +14,11 @@ export const profile = {
     linkedin: "https://www.linkedin.com/in/siddhartha--kumar/",
   },
   /**
-   * Primary avatar — your personal photo.
-   * Place file at /public/sidd.jpg (or /public/sidd.png — change extension here).
-   * If the file is missing, automatically falls back to `avatarFallbackUrl` (GitHub),
-   * then to gradient initials.
+   * Primary avatar — currently the GitHub profile photo.
+   * To use a personal photo instead, drop the file at /public/sidd.jpg and
+   * change avatarUrl to "/sidd.jpg". Falls back to gradient initials if it fails.
    */
-  avatarUrl: "/sidd.jpg",
+  avatarUrl: "https://github.com/siddhartha-kumar.png",
   avatarFallbackUrl: "https://github.com/siddhartha-kumar.png",
   resumePath: "/resume/Siddhartha_Kumar_DataEngineer.pdf",
   tagline: {
