@@ -3,21 +3,21 @@ import "./globals.css";
 
 const SITE_URL =
   process.env.NEXT_PUBLIC_SITE_URL ?? "https://siddharthakumar.dev";
-const SITE_NAME = "Siddhartha Kumar — Data Infrastructure Architect";
+const SITE_NAME = "Siddhartha Kumar — Professional Portfolio";
 const SITE_DESCRIPTION =
-  "Data Engineer with 5+ years architecting fault-tolerant, event-driven systems on AWS, Snowflake & Databricks. Currently at Tiger Analytics.";
+  "Data Engineer with around6 years architecting fault-tolerant, event-driven systems on AWS, Snowflake & Databricks. Currently at Tiger Analytics.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: "Sidd's Portfolio",
+    default: "Professional Portfolio",
     template: "%s | Professional Portfolio",
   },
   description: SITE_DESCRIPTION,
   keywords: [
     "Siddhartha Kumar",
     "Data Engineer",
-    "Data Infrastructure Architect",
+    "Data Engineering and Architecture at Scale",
     "AWS",
     "Snowflake",
     "Databricks",
@@ -78,7 +78,7 @@ const personJsonLd = {
   "@context": "https://schema.org",
   "@type": "Person",
   name: "Siddhartha Kumar",
-  jobTitle: "Data Infrastructure Architect",
+  jobTitle: "Data Engineer & Architect",
   description: SITE_DESCRIPTION,
   url: SITE_URL,
   email: "shivsiddhartha187@hotmail.com",
