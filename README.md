@@ -2,7 +2,7 @@
 
 A Netflix-inspired premium portfolio for a Data Infrastructure Architect. Built with Next.js 15, TypeScript, Tailwind v4, and Framer Motion. Deployed on Vercel.
 
-**Live:** https://professional-portfolio-five-kappa.vercel.app
+**Live:** https://siddharthakr.is-a.dev
 
 ---
 
