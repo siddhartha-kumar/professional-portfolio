@@ -11,6 +11,7 @@
  */
 
 const SIMPLE_ICONS = "https://cdn.simpleicons.org";
+const AWS_ICONS = "https://icon.icepanel.io/AWS/svg";
 const GOOGLE_FAVICON = "https://www.google.com/s2/favicons";
 
 export type TechIconResult = {
@@ -21,10 +22,20 @@ export type TechIconResult = {
 };
 
 /**
- * Map a tech/tool name to a Simple Icons slug + brand color.
+ * Map a tech/tool name to either a Simple Icons slug or a full icon URL.
+ *   - `slug` form  → resolves to https://cdn.simpleicons.org/<slug>/<color>
+ *   - `url` form   → used as-is (for AWS official architecture icons, etc.)
+ * `color` is also used by the letter-fallback chip if the icon fails to load.
  * Names are normalized (lowercased, trimmed) before lookup.
  */
-const TECH_ICON_MAP: Record<string, { slug: string; color: string; accent?: TechIconResult["accent"] }> = {
+type IconMapEntry = {
+  slug?: string;
+  url?: string;
+  color: string;
+  accent?: TechIconResult["accent"];
+};
+
+const TECH_ICON_MAP: Record<string, IconMapEntry> = {
   // ── Languages & general
   python: { slug: "python", color: "3776AB" },
   typescript: { slug: "typescript", color: "3178C6" },
@@ -46,31 +57,31 @@ const TECH_ICON_MAP: Record<string, { slug: string; color: string; accent?: Tech
   aws: { slug: "amazonwebservices", color: "FF9900", accent: "aws" },
   "amazon web services": { slug: "amazonwebservices", color: "FF9900", accent: "aws" },
 
-  // ── AWS services (Simple Icons coverage)
-  lambda: { slug: "awslambda", color: "FF9900", accent: "aws" },
-  "aws lambda": { slug: "awslambda", color: "FF9900", accent: "aws" },
-  "step functions": { slug: "amazonwebservices", color: "FF9900", accent: "aws" },
-  "aws step functions": { slug: "amazonwebservices", color: "FF9900", accent: "aws" },
-  dynamodb: { slug: "amazondynamodb", color: "4053D6", accent: "aws" },
-  "amazon dynamodb": { slug: "amazondynamodb", color: "4053D6", accent: "aws" },
-  s3: { slug: "amazons3", color: "569A31", accent: "aws" },
-  "amazon s3": { slug: "amazons3", color: "569A31", accent: "aws" },
-  ec2: { slug: "amazonec2", color: "FF9900", accent: "aws" },
-  "amazon ec2": { slug: "amazonec2", color: "FF9900", accent: "aws" },
-  athena: { slug: "amazonwebservices", color: "FF9900", accent: "aws" },
-  "aws athena": { slug: "amazonwebservices", color: "FF9900", accent: "aws" },
-  glue: { slug: "amazonwebservices", color: "FF9900", accent: "aws" },
-  emr: { slug: "amazonwebservices", color: "FF9900", accent: "aws" },
-  "aws emr": { slug: "amazonwebservices", color: "FF9900", accent: "aws" },
-  "api gateway": { slug: "amazonapigateway", color: "FF4F8B", accent: "aws" },
-  cloudwatch: { slug: "amazoncloudwatch", color: "FF4F8B", accent: "aws" },
-  eventbridge: { slug: "amazonwebservices", color: "FF9900", accent: "aws" },
-  sns: { slug: "amazonwebservices", color: "FF9900", accent: "aws" },
-  sqs: { slug: "amazonsqs", color: "FF4F8B", accent: "aws" },
-  "sns / sqs": { slug: "amazonwebservices", color: "FF9900", accent: "aws" },
-  iam: { slug: "amazoniam", color: "DD344C", accent: "aws" },
-  "aurora postgresql": { slug: "amazonrds", color: "527FFF", accent: "aws" },
-  "amazon aurora": { slug: "amazonrds", color: "527FFF", accent: "aws" },
+  // ── AWS services (official AWS Architecture Icons via icepanel.io)
+  lambda: { url: `${AWS_ICONS}/Compute/Lambda.svg`, color: "FF9900", accent: "aws" },
+  "aws lambda": { url: `${AWS_ICONS}/Compute/Lambda.svg`, color: "FF9900", accent: "aws" },
+  "step functions": { url: `${AWS_ICONS}/App-Integration/Step-Functions.svg`, color: "FF4F8B", accent: "aws" },
+  "aws step functions": { url: `${AWS_ICONS}/App-Integration/Step-Functions.svg`, color: "FF4F8B", accent: "aws" },
+  dynamodb: { url: `${AWS_ICONS}/Database/DynamoDB.svg`, color: "4053D6", accent: "aws" },
+  "amazon dynamodb": { url: `${AWS_ICONS}/Database/DynamoDB.svg`, color: "4053D6", accent: "aws" },
+  s3: { url: `${AWS_ICONS}/Storage/Simple-Storage-Service.svg`, color: "569A31", accent: "aws" },
+  "amazon s3": { url: `${AWS_ICONS}/Storage/Simple-Storage-Service.svg`, color: "569A31", accent: "aws" },
+  ec2: { url: `${AWS_ICONS}/Compute/EC2.svg`, color: "FF9900", accent: "aws" },
+  "amazon ec2": { url: `${AWS_ICONS}/Compute/EC2.svg`, color: "FF9900", accent: "aws" },
+  athena: { url: `${AWS_ICONS}/Analytics/Athena.svg`, color: "8C4FFF", accent: "aws" },
+  "aws athena": { url: `${AWS_ICONS}/Analytics/Athena.svg`, color: "8C4FFF", accent: "aws" },
+  glue: { url: `${AWS_ICONS}/Analytics/Glue.svg`, color: "8C4FFF", accent: "aws" },
+  emr: { url: `${AWS_ICONS}/Analytics/EMR.svg`, color: "8C4FFF", accent: "aws" },
+  "aws emr": { url: `${AWS_ICONS}/Analytics/EMR.svg`, color: "8C4FFF", accent: "aws" },
+  "api gateway": { url: `${AWS_ICONS}/App-Integration/API-Gateway.svg`, color: "FF4F8B", accent: "aws" },
+  cloudwatch: { url: `${AWS_ICONS}/Management-Governance/CloudWatch.svg`, color: "FF4F8B", accent: "aws" },
+  eventbridge: { url: `${AWS_ICONS}/App-Integration/EventBridge.svg`, color: "FF4F8B", accent: "aws" },
+  sns: { url: `${AWS_ICONS}/App-Integration/Simple-Notification-Service.svg`, color: "FF4F8B", accent: "aws" },
+  sqs: { url: `${AWS_ICONS}/App-Integration/Simple-Queue-Service.svg`, color: "FF4F8B", accent: "aws" },
+  "sns / sqs": { url: `${AWS_ICONS}/App-Integration/Simple-Notification-Service.svg`, color: "FF4F8B", accent: "aws" },
+  iam: { url: `${AWS_ICONS}/Security-Identity-Compliance/Identity-and-Access-Management.svg`, color: "DD344C", accent: "aws" },
+  "aurora postgresql": { url: `${AWS_ICONS}/Database/Aurora.svg`, color: "527FFF", accent: "aws" },
+  "amazon aurora": { url: `${AWS_ICONS}/Database/Aurora.svg`, color: "527FFF", accent: "aws" },
 
   // ── Data platforms
   snowflake: { slug: "snowflake", color: "29B5E8" },
@@ -144,8 +155,9 @@ export function getTechIcon(name: string): TechIconResult | null {
   const key = name.trim().toLowerCase();
   const entry = TECH_ICON_MAP[key];
   if (!entry) return null;
+  const url = entry.url ?? `${SIMPLE_ICONS}/${entry.slug}/${entry.color}`;
   return {
-    url: `${SIMPLE_ICONS}/${entry.slug}/${entry.color}`,
+    url,
     brandColor: `#${entry.color}`,
     accent: entry.accent ?? "default",
   };
