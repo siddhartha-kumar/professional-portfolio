@@ -46,7 +46,7 @@ export function Hero() {
             >
               <span className="w-8 h-px bg-brand-red" />
               <p className="font-mono text-xs sm:text-sm text-brand-red tracking-[0.25em] uppercase font-bold">
-                Data Infrastructure Architect
+                Architecting and Engineering Data at Scale
               </p>
               <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-brand-red/15 border border-brand-red/40 shadow-[0_0_16px_rgba(229,9,20,0.25)]">
                 <span className="relative flex w-1.5 h-1.5">
