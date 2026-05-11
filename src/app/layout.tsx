@@ -10,8 +10,8 @@ const SITE_DESCRIPTION =
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: SITE_NAME,
-    template: "%s | Siddhartha Kumar",
+    default: "Sidd's Portfolio",
+    template: "%s | Sidd's Portfolio",
   },
   description: SITE_DESCRIPTION,
   keywords: [
