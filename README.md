@@ -1,8 +1,8 @@
 # Siddhartha Kumar — Portfolio
 
-A Netflix-inspired premium portfolio for a Data Infrastructure Architect. Built with Next.js 15, TypeScript, Tailwind v4, and Framer Motion. Deployed on Oracle Cloud Always Free tier.
+A Netflix-inspired premium portfolio for a Data Infrastructure Architect. Built with Next.js 15, TypeScript, Tailwind v4, and Framer Motion. Deployed on Vercel.
 
-**Live:** https://siddharthakumar.dev
+**Live:** https://professional-portfolio-five-kappa.vercel.app
 
 ---
 
