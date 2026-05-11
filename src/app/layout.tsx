@@ -5,7 +5,7 @@ const SITE_URL =
   process.env.NEXT_PUBLIC_SITE_URL ?? "https://siddharthakumar.dev";
 const SITE_NAME = "Siddhartha Kumar — Professional Portfolio";
 const SITE_DESCRIPTION =
-  "Data Engineer with around6 years architecting fault-tolerant, event-driven systems on AWS, Snowflake & Databricks. Currently at Tiger Analytics.";
+  "Data Engineer with around 6 years architecting fault-tolerant, event-driven systems on AWS, Snowflake & Databricks. Currently at Tiger Analytics.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
