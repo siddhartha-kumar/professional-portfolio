@@ -40,7 +40,7 @@ export function Experience() {
                       exp.current ? "text-brand-red font-bold" : "text-text-tertiary"
                     )}
                   >
-                    {exp.shortPeriod}
+                    {exp.startYear} – {exp.endYear}
                   </span>
                 </div>
 
@@ -89,7 +89,7 @@ export function Experience() {
                           : "text-text-tertiary border-border-subtle bg-bg-elevated"
                       )}
                     >
-                      {exp.shortPeriod}
+                      {exp.startYear} – {exp.endYear}
                     </p>
 
                     {/* Header: Logo + role */}
