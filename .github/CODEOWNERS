@@ -1,0 +1,16 @@
+# CODEOWNERS — who reviews what.
+# Lines later in the file take precedence over earlier ones.
+# See: https://docs.github.com/en/repositories/managing-your-repositories-settings-and-security/customizing-your-repository/about-code-owners
+
+# Default owner for everything in the repo.
+*                       @siddhartha-kumar
+
+# Anything that affects build, CI, or security policy gets the same owner
+# (explicit so future contributors don't accidentally bypass review).
+/.github/               @siddhartha-kumar
+/.github/workflows/     @siddhartha-kumar
+SECURITY.md             @siddhartha-kumar
+package.json            @siddhartha-kumar
+package-lock.json       @siddhartha-kumar
+next.config.ts          @siddhartha-kumar
+tsconfig.json           @siddhartha-kumar
